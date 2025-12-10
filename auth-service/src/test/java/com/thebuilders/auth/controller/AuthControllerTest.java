@@ -267,11 +267,12 @@ class AuthControllerTest {
                     .refreshToken("validRefreshToken")
                     .build();
 
-            doNothing().when(authService).logout(anyString());
+            doNothing().when(authService).logout(anyString(), any());
 
             // When/Then
             mockMvc.perform(post("/api/v1/auth/logout")
                             .contentType(MediaType.APPLICATION_JSON)
+                            .header("Authorization", "Bearer testAccessToken")
                             .content(objectMapper.writeValueAsString(request)))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$.success").value(true))

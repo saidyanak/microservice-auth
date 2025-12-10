@@ -1,4 +1,0 @@
-com/thebuilders/mail/service/EmailService.class
-com/thebuilders/mail/MailServiceApplication.class
-com/thebuilders/mail/listener/EmailEventListener.class
-com/thebuilders/mail/config/RabbitMQConfig.class

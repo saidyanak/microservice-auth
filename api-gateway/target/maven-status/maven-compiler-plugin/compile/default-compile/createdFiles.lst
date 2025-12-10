@@ -1,4 +1,0 @@
-com/thebuilders/gateway/filter/AuthenticationFilter.class
-com/thebuilders/gateway/config/JwtUtil.class
-com/thebuilders/gateway/config/OpenApiConfig.class
-com/thebuilders/gateway/ApiGatewayApplication.class

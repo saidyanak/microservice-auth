@@ -14,6 +14,11 @@ YELLOW := \033[0;33m
 BLUE := \033[0;34m
 NC := \033[0m # No Color
 
+# Java 21 Configuration
+SHELL := /bin/bash
+export JAVA_HOME := /opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home
+export PATH := $(JAVA_HOME)/bin:$(shell echo $$PATH)
+
 # PID dosyaları
 PID_DIR := .pids
 DISCOVERY_PID := $(PID_DIR)/discovery.pid
@@ -33,9 +38,8 @@ MAIL_PORT := 8082
 
 help: ## Yardım menüsü
 	@echo ""
-	@echo "$(BLUE)╔════════════════════════════════════════════════════════════╗$(NC)"
-	@echo "$(BLUE)║     Career Portal Backend - Komut Listesi                  ║$(NC)"
-	@echo "$(BLUE)╚════════════════════════════════════════════════════════════╝$(NC)"
+	@echo "$(BLUE)Microservice Auth System - Komut Listesi$(NC)"
+	@echo "$(BLUE)=========================================$(NC)"
 	@echo ""
 	@echo "$(GREEN)Ana Komutlar:$(NC)"
 	@echo "  make start          - Tüm servisleri başlat (infra + apps)"
@@ -115,8 +119,8 @@ test: ## Testleri çalıştır
 
 start-infra: ## Docker altyapısını başlat
 	@echo "$(BLUE)► Docker altyapısı başlatılıyor...$(NC)"
-	@docker-compose -f docker-compose.dev.yml up -d auth-db rabbitmq mailhog
-	@echo "$(GREEN)✓ PostgreSQL, RabbitMQ, MailHog başlatıldı$(NC)"
+	@docker-compose -f docker-compose.dev.yml up -d auth-db rabbitmq mailhog redis
+	@echo "$(GREEN)✓ PostgreSQL, RabbitMQ, MailHog, Redis başlatıldı$(NC)"
 	@sleep 3
 	@make infra-status
 
@@ -153,7 +157,7 @@ monitoring-status: ## Monitoring durumunu göster
 infra-status: ## Docker container durumları
 	@echo ""
 	@echo "$(BLUE)Docker Container Durumları:$(NC)"
-	@docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | grep -E "auth-db|rabbitmq|mailhog|NAMES" || echo "  Çalışan container yok"
+	@docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | grep -E "auth-db|rabbitmq|mailhog|redis|NAMES" || echo "  Çalışan container yok"
 	@echo ""
 
 # ============================================
@@ -273,13 +277,10 @@ stop-mail: ## Mail Service durdur
 
 start: install start-infra ## Tüm sistemi başlat
 	@echo ""
-	@echo "$(BLUE)═══════════════════════════════════════════$(NC)"
-	@echo "$(BLUE)       Servisler Başlatılıyor...           $(NC)"
-	@echo "$(BLUE)═══════════════════════════════════════════$(NC)"
-	@echo ""
+	@echo "$(BLUE)Servisler Başlatılıyor...$(NC)"
 	@mkdir -p logs
 	@make start-discovery
-	@echo "$(YELLOW)⏳ Discovery Server'ın hazır olması bekleniyor...$(NC)"
+	@echo "$(YELLOW)Discovery Server hazır olması bekleniyor...$(NC)"
 	@sleep 10
 	@make start-gateway
 	@sleep 5
@@ -287,26 +288,20 @@ start: install start-infra ## Tüm sistemi başlat
 	@sleep 5
 	@make start-mail
 	@echo ""
-	@echo "$(GREEN)═══════════════════════════════════════════$(NC)"
-	@echo "$(GREEN)       Tüm Servisler Başlatıldı!           $(NC)"
-	@echo "$(GREEN)═══════════════════════════════════════════$(NC)"
+	@echo "$(GREEN)Tüm Servisler Başlatıldı$(NC)"
 	@echo ""
 	@sleep 5
 	@make status
 
 stop: ## Tüm servisleri durdur
 	@echo ""
-	@echo "$(BLUE)═══════════════════════════════════════════$(NC)"
-	@echo "$(BLUE)       Servisler Durduruluyor...           $(NC)"
-	@echo "$(BLUE)═══════════════════════════════════════════$(NC)"
-	@echo ""
+	@echo "$(BLUE)Servisler Durduruluyor...$(NC)"
 	@make stop-mail
 	@make stop-auth
 	@make stop-gateway
 	@make stop-discovery
 	@pkill -f "spring-boot:run" 2>/dev/null || true
-	@echo ""
-	@echo "$(GREEN)✓ Tüm Spring Boot servisleri durduruldu$(NC)"
+	@echo "$(GREEN)Tüm Spring Boot servisleri durduruldu$(NC)"
 	@echo ""
 
 stop-all: stop stop-infra ## Tüm sistemi durdur (servisler + altyapı)
@@ -320,35 +315,32 @@ restart: stop start ## Tüm servisleri yeniden başlat
 
 status: ## Servis durumlarını göster
 	@echo ""
-	@echo "$(BLUE)╔════════════════════════════════════════════════════════════╗$(NC)"
-	@echo "$(BLUE)║                   SERVİS DURUMLARI                         ║$(NC)"
-	@echo "$(BLUE)╚════════════════════════════════════════════════════════════╝$(NC)"
+	@echo "$(BLUE)SERVICE STATUS$(NC)"
+	@echo "$(BLUE)=================================================================================$(NC)"
 	@echo ""
-	@echo "$(BLUE)Spring Boot Servisleri:$(NC)"
-	@echo "─────────────────────────────────────────────────────────────────"
 	@printf "  %-20s " "Discovery Server:"; \
 	if curl -s http://localhost:$(DISCOVERY_PORT) > /dev/null 2>&1; then \
-		echo "$(GREEN)✅ Çalışıyor$(NC) (http://localhost:$(DISCOVERY_PORT))"; \
+		echo "$(GREEN)[OK]$(NC) http://localhost:$(DISCOVERY_PORT)"; \
 	else \
-		echo "$(RED)❌ Çalışmıyor$(NC)"; \
+		echo "$(RED)[DOWN]$(NC)"; \
 	fi
 	@printf "  %-20s " "API Gateway:"; \
 	if curl -s http://localhost:$(GATEWAY_PORT)/actuator/health > /dev/null 2>&1; then \
-		echo "$(GREEN)✅ Çalışıyor$(NC) (http://localhost:$(GATEWAY_PORT))"; \
+		echo "$(GREEN)[OK]$(NC) http://localhost:$(GATEWAY_PORT)"; \
 	else \
-		echo "$(RED)❌ Çalışmıyor$(NC)"; \
+		echo "$(RED)[DOWN]$(NC)"; \
 	fi
 	@printf "  %-20s " "Auth Service:"; \
 	if curl -s http://localhost:$(AUTH_PORT)/actuator/health > /dev/null 2>&1; then \
-		echo "$(GREEN)✅ Çalışıyor$(NC) (http://localhost:$(AUTH_PORT))"; \
+		echo "$(GREEN)[OK]$(NC) http://localhost:$(AUTH_PORT)"; \
 	else \
-		echo "$(RED)❌ Çalışmıyor$(NC)"; \
+		echo "$(RED)[DOWN]$(NC)"; \
 	fi
 	@printf "  %-20s " "Mail Service:"; \
 	if curl -s http://localhost:$(MAIL_PORT)/actuator/health > /dev/null 2>&1; then \
-		echo "$(GREEN)✅ Çalışıyor$(NC) (http://localhost:$(MAIL_PORT))"; \
+		echo "$(GREEN)[OK]$(NC) http://localhost:$(MAIL_PORT)"; \
 	else \
-		echo "$(RED)❌ Çalışmıyor$(NC)"; \
+		echo "$(RED)[DOWN]$(NC)"; \
 	fi
 	@echo ""
 	@make infra-status

@@ -234,10 +234,6 @@ class AuthServiceTest {
         @Test
         @DisplayName("Should throw exception for invalid credentials")
         void shouldThrowExceptionForInvalidCredentials() {
-            // Given
-            when(authenticationManager.authenticate(any()))
-                    .thenThrow(new BadCredentialsException("Bad credentials"));
-
             // When/Then
             assertThatThrownBy(() -> authService.login(loginRequest))
                     .isInstanceOf(AuthException.class)
@@ -441,7 +437,7 @@ class AuthServiceTest {
                     .thenAnswer(invocation -> invocation.getArgument(0));
 
             // When
-            authService.logout("validRefreshToken");
+            authService.logout("validRefreshToken", null);
 
             // Then
             verify(refreshTokenRepository).save(any(RefreshToken.class));

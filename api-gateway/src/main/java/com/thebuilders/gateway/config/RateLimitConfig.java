@@ -4,6 +4,7 @@ import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;
 import org.springframework.cloud.gateway.filter.ratelimit.RedisRateLimiter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import reactor.core.publisher.Mono;
 
 /**
@@ -18,6 +19,7 @@ public class RateLimitConfig {
      * Allows 20 requests per second with a burst of 40
      */
     @Bean
+    @Primary
     public RedisRateLimiter defaultRateLimiter() {
         return new RedisRateLimiter(20, 40, 1);
     }
@@ -37,9 +39,10 @@ public class RateLimitConfig {
      * Used for rate limiting per client IP
      */
     @Bean
+    @Primary
     public KeyResolver ipKeyResolver() {
         return exchange -> {
-            String ip = exchange.getRequest().getRemoteAddress() != null 
+            String ip = exchange.getRequest().getRemoteAddress() != null
                     ? exchange.getRequest().getRemoteAddress().getAddress().getHostAddress()
                     : "unknown";
             return Mono.just(ip);
