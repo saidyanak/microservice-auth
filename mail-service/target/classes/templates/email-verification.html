@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your Email</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+        h1 {
+            color: #1f2937;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #2563eb;
+            color: #ffffff !important;
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+        .button:hover {
+            background-color: #1d4ed8;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #6b7280;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🚀 Career Portal</div>
+        </div>
+        
+        <h1>Email Doğrulama</h1>
+        
+        <p>Merhaba <strong th:text="${firstName}">User</strong>,</p>
+        
+        <p>Career Portal'a hoş geldiniz! Hesabınızı aktifleştirmek için lütfen aşağıdaki butona tıklayarak email adresinizi doğrulayın.</p>
+        
+        <div style="text-align: center;">
+            <a th:href="${verificationLink}" class="button">Email Adresimi Doğrula</a>
+        </div>
+        
+        <p>Bu link 24 saat boyunca geçerlidir.</p>
+        
+        <p>Eğer bu hesabı siz oluşturmadıysanız, bu emaili görmezden gelebilirsiniz.</p>
+        
+        <div class="footer">
+            <p>Bu email Career Portal tarafından otomatik olarak gönderilmiştir.</p>
+            <p>© 2024 Career Portal - Bilişim Vadisi</p>
+        </div>
+    </div>
+</body>
+</html>

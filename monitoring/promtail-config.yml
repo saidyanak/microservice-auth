@@ -1,0 +1,59 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push
+
+scrape_configs:
+  # Spring Boot Application Logs
+  - job_name: spring-boot-apps
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: spring-boot
+          environment: development
+          __path__: /var/log/app/*.log
+
+    pipeline_stages:
+      # Parse log level from Spring Boot format
+      - regex:
+          expression: '^(?P<timestamp>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3}) \[(?P<thread>[^\]]+)\] (?P<level>\w+)\s+(?P<logger>[^\s]+) - (?P<message>.*)$'
+      
+      # Extract labels from regex groups
+      - labels:
+          level:
+      
+      # Use current time instead of log timestamp to avoid timezone issues
+      # Logs will be indexed at ingestion time
+
+  # Error logs (separate job for alerting)
+  - job_name: spring-boot-errors
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: spring-boot-errors
+          environment: development
+          __path__: /var/log/app/*-error.log
+
+    pipeline_stages:
+      - regex:
+          expression: '^(?P<timestamp>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3}) \[(?P<thread>[^\]]+)\] (?P<level>\w+)\s+(?P<logger>[^\s]+) - (?P<message>.*)$'
+      
+      - labels:
+          level:
+
+  # Gateway Access Logs
+  - job_name: gateway-access
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: gateway-access
+          service: api-gateway
+          __path__: /var/log/app/api-gateway-access.log

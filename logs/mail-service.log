@@ -1,0 +1,917 @@
+2025-12-10 17:38:29.547 [main] INFO  c.t.mail.MailServiceApplication - Starting MailServiceApplication using Java 21.0.9 with PID 78037 (/Users/syanak/42/BilişimVadisiHackathon/mail-service/target/classes started by syanak in /Users/syanak/42/BilişimVadisiHackathon/mail-service)
+2025-12-10 17:38:29.548 [main] DEBUG c.t.mail.MailServiceApplication - Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-12-10 17:38:29.548 [main] INFO  c.t.mail.MailServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-10 17:38:29.860 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=d1851908-eaaf-36de-9256-499a4395d8c8
+2025-12-10 17:38:29.940 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2025-12-10 17:38:29.949 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-10 17:38:29.949 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-12-10 17:38:29.966 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-10 17:38:29.966 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 406 ms
+2025-12-10 17:38:30.308 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2025-12-10 17:38:30.319 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-10 17:38:30.322 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-12-10 17:38:30.332 [main] DEBUG o.s.a.r.l.a.MessagingMessageListenerAdapter - Inferred argument type for public void com.thebuilders.mail.listener.EmailEventListener.handleUserRegisteredEvent(com.thebuilders.common.event.UserRegisteredEvent) is class com.thebuilders.common.event.UserRegisteredEvent
+2025-12-10 17:38:30.335 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Changing consumers from 1 to 3
+2025-12-10 17:38:30.335 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - No global properties bean
+2025-12-10 17:38:30.335 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - No global properties bean
+2025-12-10 17:38:30.335 [main] DEBUG o.s.a.r.l.a.MessagingMessageListenerAdapter - Inferred argument type for public void com.thebuilders.mail.listener.EmailEventListener.handlePasswordResetEvent(com.thebuilders.common.event.PasswordResetEvent) is class com.thebuilders.common.event.PasswordResetEvent
+2025-12-10 17:38:30.336 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Changing consumers from 1 to 3
+2025-12-10 17:38:30.336 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - No global properties bean
+2025-12-10 17:38:30.336 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - No global properties bean
+2025-12-10 17:38:30.344 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2025-12-10 17:38:30.350 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2025-12-10 17:38:30.352 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-10 17:38:30.354 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2025-12-10 17:38:30.354 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2025-12-10 17:38:30.354 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2025-12-10 17:38:30.354 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2025-12-10 17:38:30.354 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2025-12-10 17:38:30.354 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2025-12-10 17:38:30.354 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2025-12-10 17:38:30.441 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2025-12-10 17:38:30.441 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2025-12-10 17:38:30.442 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-12-10 17:38:30.442 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1765377510442 with initial instances count: 2
+2025-12-10 17:38:30.443 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application MAIL-SERVICE with eureka with status UP
+2025-12-10 17:38:30.443 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1765377510443, current=UP, previous=STARTING]
+2025-12-10 17:38:30.443 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_MAIL-SERVICE/192.168.1.139:mail-service:8082: registering service...
+2025-12-10 17:38:30.447 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/'
+2025-12-10 17:38:30.448 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8082
+2025-12-10 17:38:30.450 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Starting Rabbit listener container.
+2025-12-10 17:38:30.451 [main] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2025-12-10 17:38:30.459 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_MAIL-SERVICE/192.168.1.139:mail-service:8082 - registration status: 204
+2025-12-10 17:38:30.469 [main] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#36d697ab:0/SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229]
+2025-12-10 17:38:30.470 [main] DEBUG o.s.amqp.rabbit.core.RabbitAdmin - Initializing declarations
+2025-12-10 17:38:30.475 [main] DEBUG o.s.a.r.c.CachingConnectionFactory - Creating cached Rabbit Channel from AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+2025-12-10 17:38:30.478 [main] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitAdmin$$Lambda/0x00000088017ab160 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229]
+2025-12-10 17:38:30.478 [main] DEBUG o.s.amqp.rabbit.core.RabbitAdmin - declaring Queue 'email-queue'
+2025-12-10 17:38:30.480 [main] DEBUG o.s.amqp.rabbit.core.RabbitAdmin - Declarations finished
+2025-12-10 17:38:30.482 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitAdmin$$Lambda/0x00000088017b58b8 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229]
+2025-12-10 17:38:30.483 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitAdmin$$Lambda/0x00000088017b58b8 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229]
+2025-12-10 17:38:30.483 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG o.s.a.r.l.BlockingQueueConsumer - Starting consumer Consumer@5ca7619f: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:38:30.483 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] DEBUG o.s.a.r.l.BlockingQueueConsumer - Starting consumer Consumer@5b71af0d: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:38:30.483 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitAdmin$$Lambda/0x00000088017b58b8 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229]
+2025-12-10 17:38:30.484 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - Starting consumer Consumer@52c27d53: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:38:30.485 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG o.s.a.r.c.CachingConnectionFactory - Creating cached Rabbit Channel from AMQChannel(amqp://guest@127.0.0.1:5672/,2)
+2025-12-10 17:38:30.487 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] DEBUG o.s.a.r.c.CachingConnectionFactory - Creating cached Rabbit Channel from AMQChannel(amqp://guest@127.0.0.1:5672/,3)
+2025-12-10 17:38:30.490 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] DEBUG o.s.a.r.l.BlockingQueueConsumer - Started on queue 'email-queue' with tag amq.ctag-jwWYKk635h1HtmrnAU0MbQ: Consumer@5b71af0d: tags=[[amq.ctag-jwWYKk635h1HtmrnAU0MbQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:38:30.490 [pool-1-thread-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - ConsumeOK: Consumer@5b71af0d: tags=[[amq.ctag-jwWYKk635h1HtmrnAU0MbQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:38:30.490 [pool-1-thread-4] DEBUG o.s.a.r.l.BlockingQueueConsumer - ConsumeOK: Consumer@5ca7619f: tags=[[]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,2), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:38:30.490 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - Started on queue 'email-queue' with tag amq.ctag-T667yxlC9LZWb1ebsEtWMQ: Consumer@52c27d53: tags=[[]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,3), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:38:30.490 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG o.s.a.r.l.BlockingQueueConsumer - Started on queue 'email-queue' with tag amq.ctag-BAAfXzyeG-di0eJKylDUFw: Consumer@5ca7619f: tags=[[amq.ctag-BAAfXzyeG-di0eJKylDUFw]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,2), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:38:30.490 [pool-1-thread-5] DEBUG o.s.a.r.l.BlockingQueueConsumer - ConsumeOK: Consumer@52c27d53: tags=[[amq.ctag-T667yxlC9LZWb1ebsEtWMQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,3), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:38:30.490 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Starting Rabbit listener container.
+2025-12-10 17:38:30.491 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG o.s.a.r.c.CachingConnectionFactory - Creating cached Rabbit Channel from AMQChannel(amqp://guest@127.0.0.1:5672/,4)
+2025-12-10 17:38:30.491 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitAdmin$$Lambda/0x00000088017b58b8 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229]
+2025-12-10 17:38:30.492 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG o.s.a.r.l.BlockingQueueConsumer - Starting consumer Consumer@57e6d56a: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:38:30.493 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] DEBUG o.s.a.r.c.CachingConnectionFactory - Creating cached Rabbit Channel from AMQChannel(amqp://guest@127.0.0.1:5672/,5)
+2025-12-10 17:38:30.493 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitAdmin$$Lambda/0x00000088017b58b8 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,5), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229]
+2025-12-10 17:38:30.494 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] DEBUG o.s.a.r.l.BlockingQueueConsumer - Starting consumer Consumer@104392ba: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:38:30.494 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG o.s.a.r.l.BlockingQueueConsumer - Started on queue 'email-queue' with tag amq.ctag-qTg7lRXCpI6dkOEW5eED2Q: Consumer@57e6d56a: tags=[[]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:38:30.494 [pool-1-thread-6] DEBUG o.s.a.r.l.BlockingQueueConsumer - ConsumeOK: Consumer@57e6d56a: tags=[[amq.ctag-qTg7lRXCpI6dkOEW5eED2Q]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:38:30.494 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-3] DEBUG o.s.a.r.c.CachingConnectionFactory - Creating cached Rabbit Channel from AMQChannel(amqp://guest@127.0.0.1:5672/,6)
+2025-12-10 17:38:30.494 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-3] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitAdmin$$Lambda/0x00000088017b58b8 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,6), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229]
+2025-12-10 17:38:30.495 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - Starting consumer Consumer@5c1687d1: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:38:30.495 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] DEBUG o.s.a.r.l.BlockingQueueConsumer - Started on queue 'email-queue' with tag amq.ctag-vQMOirpzDWlp-yJ7js4ZLQ: Consumer@104392ba: tags=[[]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,5), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:38:30.495 [pool-1-thread-7] DEBUG o.s.a.r.l.BlockingQueueConsumer - ConsumeOK: Consumer@104392ba: tags=[[amq.ctag-vQMOirpzDWlp-yJ7js4ZLQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,5), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:38:30.496 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - Started on queue 'email-queue' with tag amq.ctag-O0WF738y00hHhrHHWNEulw: Consumer@5c1687d1: tags=[[]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,6), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:38:30.496 [pool-1-thread-8] DEBUG o.s.a.r.l.BlockingQueueConsumer - ConsumeOK: Consumer@5c1687d1: tags=[[amq.ctag-O0WF738y00hHhrHHWNEulw]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,6), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:38:30.502 [main] INFO  c.t.mail.MailServiceApplication - Started MailServiceApplication in 1.126 seconds (process running for 1.287)
+2025-12-10 17:38:33.233 [http-nio-8082-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-10 17:38:33.233 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-10 17:38:33.234 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-10 17:38:33.249 [http-nio-8082-exec-1] DEBUG o.s.a.r.c.CachingConnectionFactory - Creating cached Rabbit Channel from AMQChannel(amqp://guest@127.0.0.1:5672/,7)
+2025-12-10 17:38:33.249 [http-nio-8082-exec-1] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitHealthIndicator$$Lambda/0x0000008801814190 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,7), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229]
+2025-12-10 17:38:36.389 [http-nio-8082-exec-2] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitHealthIndicator$$Lambda/0x0000008801814190 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,7), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229]
+2025-12-10 17:43:30.362 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-10 17:47:08.847 [pool-1-thread-9] DEBUG o.s.a.r.l.BlockingQueueConsumer - Storing delivery for consumerTag: 'amq.ctag-T667yxlC9LZWb1ebsEtWMQ' with deliveryTag: '1' in Consumer@52c27d53: tags=[[amq.ctag-T667yxlC9LZWb1ebsEtWMQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,3), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:47:08.853 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - Received message: (Body:'[B@67158a06(byte[147])' MessageProperties [headers={__TypeId__=com.thebuilders.common.event.PasswordResetEvent}, contentType=application/json, contentEncoding=UTF-8, contentLength=0, receivedDeliveryMode=PERSISTENT, priority=0, redelivered=false, receivedExchange=career-portal-exchange, receivedRoutingKey=password.reset, deliveryTag=1, consumerTag=amq.ctag-T667yxlC9LZWb1ebsEtWMQ, consumerQueue=email-queue])
+2025-12-10 17:47:08.859 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] DEBUG o.s.a.r.l.a.MessagingMessageListenerAdapter - Processing [GenericMessage [payload=UserRegisteredEvent(userId=ca23047b-340c-434b-a3de-dfb78078b4d3, email=john@example.com, firstName=John, lastName=null, role=null, verificationToken=null), headers={amqp_receivedDeliveryMode=PERSISTENT, amqp_receivedExchange=career-portal-exchange, amqp_deliveryTag=1, amqp_consumerQueue=email-queue, amqp_redelivered=false, amqp_receivedRoutingKey=password.reset, amqp_contentEncoding=UTF-8, amqp_retryCount=0, id=6c92dcc6-fdbb-6567-3d11-af1c38b3717a, amqp_consumerTag=amq.ctag-T667yxlC9LZWb1ebsEtWMQ, amqp_lastInBatch=false, contentType=application/json, __TypeId__=com.thebuilders.common.event.PasswordResetEvent, timestamp=1765378028859}]]
+2025-12-10 17:47:08.860 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] INFO  c.t.mail.listener.EmailEventListener - Received UserRegisteredEvent for: john@example.com
+2025-12-10 17:47:08.952 [pool-1-thread-10] DEBUG o.s.a.r.l.BlockingQueueConsumer - Storing delivery for consumerTag: 'amq.ctag-jwWYKk635h1HtmrnAU0MbQ' with deliveryTag: '1' in Consumer@5b71af0d: tags=[[amq.ctag-jwWYKk635h1HtmrnAU0MbQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:47:08.952 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] DEBUG o.s.a.r.l.BlockingQueueConsumer - Received message: (Body:'[B@632c7cf9(byte[147])' MessageProperties [headers={__TypeId__=com.thebuilders.common.event.PasswordResetEvent}, contentType=application/json, contentEncoding=UTF-8, contentLength=0, receivedDeliveryMode=PERSISTENT, priority=0, redelivered=false, receivedExchange=career-portal-exchange, receivedRoutingKey=password.reset, deliveryTag=1, consumerTag=amq.ctag-jwWYKk635h1HtmrnAU0MbQ, consumerQueue=email-queue])
+2025-12-10 17:47:08.952 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] DEBUG o.s.a.r.l.a.MessagingMessageListenerAdapter - Processing [GenericMessage [payload=UserRegisteredEvent(userId=ca23047b-340c-434b-a3de-dfb78078b4d3, email=john@example.com, firstName=John, lastName=null, role=null, verificationToken=null), headers={amqp_receivedDeliveryMode=PERSISTENT, amqp_receivedExchange=career-portal-exchange, amqp_deliveryTag=1, amqp_consumerQueue=email-queue, amqp_redelivered=false, amqp_receivedRoutingKey=password.reset, amqp_contentEncoding=UTF-8, amqp_retryCount=0, id=3cc09566-210a-0c98-3a80-d3d8273f73fc, amqp_consumerTag=amq.ctag-jwWYKk635h1HtmrnAU0MbQ, amqp_lastInBatch=false, contentType=application/json, __TypeId__=com.thebuilders.common.event.PasswordResetEvent, timestamp=1765378028952}]]
+2025-12-10 17:47:08.952 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  c.t.mail.listener.EmailEventListener - Received UserRegisteredEvent for: john@example.com
+2025-12-10 17:47:08.971 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] INFO  c.t.mail.service.EmailService - Verification email sent to: john@example.com
+2025-12-10 17:47:08.971 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  c.t.mail.service.EmailService - Verification email sent to: john@example.com
+2025-12-10 17:47:09.302 [pool-1-thread-11] DEBUG o.s.a.r.l.BlockingQueueConsumer - Storing delivery for consumerTag: 'amq.ctag-BAAfXzyeG-di0eJKylDUFw' with deliveryTag: '1' in Consumer@5ca7619f: tags=[[amq.ctag-BAAfXzyeG-di0eJKylDUFw]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,2), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:47:09.303 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG o.s.a.r.l.BlockingQueueConsumer - Received message: (Body:'[B@322eb038(byte[147])' MessageProperties [headers={__TypeId__=com.thebuilders.common.event.PasswordResetEvent}, contentType=application/json, contentEncoding=UTF-8, contentLength=0, receivedDeliveryMode=PERSISTENT, priority=0, redelivered=false, receivedExchange=career-portal-exchange, receivedRoutingKey=password.reset, deliveryTag=1, consumerTag=amq.ctag-BAAfXzyeG-di0eJKylDUFw, consumerQueue=email-queue])
+2025-12-10 17:47:09.303 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG o.s.a.r.l.a.MessagingMessageListenerAdapter - Processing [GenericMessage [payload=UserRegisteredEvent(userId=ca23047b-340c-434b-a3de-dfb78078b4d3, email=john@example.com, firstName=John, lastName=null, role=null, verificationToken=null), headers={amqp_receivedDeliveryMode=PERSISTENT, amqp_receivedExchange=career-portal-exchange, amqp_deliveryTag=1, amqp_consumerQueue=email-queue, amqp_redelivered=false, amqp_receivedRoutingKey=password.reset, amqp_contentEncoding=UTF-8, amqp_retryCount=0, id=24b60a36-2902-360d-94c4-7e2f29baa761, amqp_consumerTag=amq.ctag-BAAfXzyeG-di0eJKylDUFw, amqp_lastInBatch=false, contentType=application/json, __TypeId__=com.thebuilders.common.event.PasswordResetEvent, timestamp=1765378029303}]]
+2025-12-10 17:47:09.303 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  c.t.mail.listener.EmailEventListener - Received UserRegisteredEvent for: john@example.com
+2025-12-10 17:47:09.334 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  c.t.mail.service.EmailService - Verification email sent to: john@example.com
+2025-12-10 17:47:09.462 [pool-1-thread-12] DEBUG o.s.a.r.l.BlockingQueueConsumer - Storing delivery for consumerTag: 'amq.ctag-qTg7lRXCpI6dkOEW5eED2Q' with deliveryTag: '1' in Consumer@57e6d56a: tags=[[amq.ctag-qTg7lRXCpI6dkOEW5eED2Q]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:47:09.462 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG o.s.a.r.l.BlockingQueueConsumer - Received message: (Body:'[B@ed0c4be(byte[147])' MessageProperties [headers={__TypeId__=com.thebuilders.common.event.PasswordResetEvent}, contentType=application/json, contentEncoding=UTF-8, contentLength=0, receivedDeliveryMode=PERSISTENT, priority=0, redelivered=false, receivedExchange=career-portal-exchange, receivedRoutingKey=password.reset, deliveryTag=1, consumerTag=amq.ctag-qTg7lRXCpI6dkOEW5eED2Q, consumerQueue=email-queue])
+2025-12-10 17:47:09.465 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG o.s.a.r.l.a.MessagingMessageListenerAdapter - Processing [GenericMessage [payload=PasswordResetEvent(userId=ca23047b-340c-434b-a3de-dfb78078b4d3, email=john@example.com, firstName=John, resetToken=57654eb5-35d2-43c7-8812-97f666d59d97), headers={amqp_receivedDeliveryMode=PERSISTENT, amqp_receivedExchange=career-portal-exchange, amqp_deliveryTag=1, amqp_consumerQueue=email-queue, amqp_redelivered=false, amqp_receivedRoutingKey=password.reset, amqp_contentEncoding=UTF-8, amqp_retryCount=0, id=4e41998a-d497-0d5e-d8c3-691f4c9f55cc, amqp_consumerTag=amq.ctag-qTg7lRXCpI6dkOEW5eED2Q, amqp_lastInBatch=false, contentType=application/json, __TypeId__=com.thebuilders.common.event.PasswordResetEvent, timestamp=1765378029464}]]
+2025-12-10 17:47:09.465 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  c.t.mail.listener.EmailEventListener - Received PasswordResetEvent for: john@example.com
+2025-12-10 17:47:09.477 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  c.t.mail.service.EmailService - Password reset email sent to: john@example.com
+2025-12-10 17:47:09.593 [pool-1-thread-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - Storing delivery for consumerTag: 'amq.ctag-vQMOirpzDWlp-yJ7js4ZLQ' with deliveryTag: '1' in Consumer@104392ba: tags=[[amq.ctag-vQMOirpzDWlp-yJ7js4ZLQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,5), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:47:09.594 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] DEBUG o.s.a.r.l.BlockingQueueConsumer - Received message: (Body:'[B@fa78a22(byte[147])' MessageProperties [headers={__TypeId__=com.thebuilders.common.event.PasswordResetEvent}, contentType=application/json, contentEncoding=UTF-8, contentLength=0, receivedDeliveryMode=PERSISTENT, priority=0, redelivered=false, receivedExchange=career-portal-exchange, receivedRoutingKey=password.reset, deliveryTag=1, consumerTag=amq.ctag-vQMOirpzDWlp-yJ7js4ZLQ, consumerQueue=email-queue])
+2025-12-10 17:47:09.594 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] DEBUG o.s.a.r.l.a.MessagingMessageListenerAdapter - Processing [GenericMessage [payload=PasswordResetEvent(userId=ca23047b-340c-434b-a3de-dfb78078b4d3, email=john@example.com, firstName=John, resetToken=80af2f8d-868c-4c3b-8454-4490536df14d), headers={amqp_receivedDeliveryMode=PERSISTENT, amqp_receivedExchange=career-portal-exchange, amqp_deliveryTag=1, amqp_consumerQueue=email-queue, amqp_redelivered=false, amqp_receivedRoutingKey=password.reset, amqp_contentEncoding=UTF-8, amqp_retryCount=0, id=ddab9a06-c72a-04a4-a72b-d5781f92c55d, amqp_consumerTag=amq.ctag-vQMOirpzDWlp-yJ7js4ZLQ, amqp_lastInBatch=false, contentType=application/json, __TypeId__=com.thebuilders.common.event.PasswordResetEvent, timestamp=1765378029594}]]
+2025-12-10 17:47:09.594 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  c.t.mail.listener.EmailEventListener - Received PasswordResetEvent for: john@example.com
+2025-12-10 17:47:09.615 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  c.t.mail.service.EmailService - Password reset email sent to: john@example.com
+2025-12-10 17:47:37.538 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application MAIL-SERVICE with eureka with status DOWN
+2025-12-10 17:47:37.539 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1765378057539, current=DOWN, previous=UP]
+2025-12-10 17:47:37.539 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_MAIL-SERVICE/192.168.1.139:mail-service:8082: registering service...
+2025-12-10 17:47:37.541 [SpringApplicationShutdownHook] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Shutting down Rabbit listener container
+2025-12-10 17:47:37.543 [pool-1-thread-4] DEBUG o.s.a.r.l.BlockingQueueConsumer - Received cancelOk for tag amq.ctag-BAAfXzyeG-di0eJKylDUFw (email-queue); Consumer@5ca7619f: tags=[[amq.ctag-BAAfXzyeG-di0eJKylDUFw]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,2), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:47:37.545 [pool-1-thread-5] DEBUG o.s.a.r.l.BlockingQueueConsumer - Received cancelOk for tag amq.ctag-jwWYKk635h1HtmrnAU0MbQ (email-queue); Consumer@5b71af0d: tags=[[amq.ctag-jwWYKk635h1HtmrnAU0MbQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:47:37.545 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on POST request for "http://localhost:8761/eureka/apps/MAIL-SERVICE": localhost:8761 failed to respond stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/MAIL-SERVICE": localhost:8761 failed to respond
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.core5.http.NoHttpResponseException: localhost:8761 failed to respond
+	at org.apache.hc.core5.http.impl.io.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:333)
+	at org.apache.hc.core5.http.impl.io.HttpRequestExecutor.execute(HttpRequestExecutor.java:193)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.lambda$execute$0(InternalExecRuntime.java:236)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$InternalConnectionEndpoint.execute(PoolingHttpClientConnectionManager.java:791)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.execute(InternalExecRuntime.java:233)
+	at org.apache.hc.client5.http.impl.classic.MainClientExec.execute(MainClientExec.java:121)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:199)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:150)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:174)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:141)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 21 more
+
+2025-12-10 17:47:37.545 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/MAIL-SERVICE": localhost:8761 failed to respond
+2025-12-10 17:47:37.546 [pool-1-thread-6] DEBUG o.s.a.r.l.BlockingQueueConsumer - Received cancelOk for tag amq.ctag-T667yxlC9LZWb1ebsEtWMQ (email-queue); Consumer@52c27d53: tags=[[amq.ctag-T667yxlC9LZWb1ebsEtWMQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,3), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:47:37.546 [SpringApplicationShutdownHook] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Shutting down Rabbit listener container
+2025-12-10 17:47:37.546 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Waiting for workers to finish.
+2025-12-10 17:47:37.548 [pool-1-thread-7] DEBUG o.s.a.r.l.BlockingQueueConsumer - Received cancelOk for tag amq.ctag-qTg7lRXCpI6dkOEW5eED2Q (email-queue); Consumer@57e6d56a: tags=[[amq.ctag-qTg7lRXCpI6dkOEW5eED2Q]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:47:37.550 [pool-1-thread-8] DEBUG o.s.a.r.l.BlockingQueueConsumer - Received cancelOk for tag amq.ctag-vQMOirpzDWlp-yJ7js4ZLQ (email-queue); Consumer@104392ba: tags=[[amq.ctag-vQMOirpzDWlp-yJ7js4ZLQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,5), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:47:37.551 [pool-1-thread-9] DEBUG o.s.a.r.l.BlockingQueueConsumer - Received cancelOk for tag amq.ctag-O0WF738y00hHhrHHWNEulw (email-queue); Consumer@5c1687d1: tags=[[amq.ctag-O0WF738y00hHhrHHWNEulw]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,6), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:47:37.551 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-4] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Waiting for workers to finish.
+2025-12-10 17:47:37.552 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/MAIL-SERVICE": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/MAIL-SERVICE": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:216)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:490)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:150)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:174)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:141)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 22 more
+
+2025-12-10 17:47:37.552 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/MAIL-SERVICE": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+2025-12-10 17:47:37.552 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.netflix.discovery.DiscoveryClient - DiscoveryClient_MAIL-SERVICE/192.168.1.139:mail-service:8082 - registration failed Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-12-10 17:47:37.554 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.n.discovery.InstanceInfoReplicator - There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-12-10 17:47:37.567 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Cancelling Consumer@57e6d56a: tags=[[amq.ctag-qTg7lRXCpI6dkOEW5eED2Q]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:47:37.567 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG o.s.a.r.l.BlockingQueueConsumer - Closing Rabbit Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229]
+2025-12-10 17:47:37.567 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG o.s.a.r.c.CachingConnectionFactory - Closing cached Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4)
+2025-12-10 17:47:37.715 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Cancelling Consumer@104392ba: tags=[[amq.ctag-vQMOirpzDWlp-yJ7js4ZLQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,5), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:47:37.715 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] DEBUG o.s.a.r.l.BlockingQueueConsumer - Closing Rabbit Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,5), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229]
+2025-12-10 17:47:37.715 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] DEBUG o.s.a.r.c.CachingConnectionFactory - Closing cached Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,5)
+2025-12-10 17:47:38.064 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Cancelling Consumer@5b71af0d: tags=[[amq.ctag-jwWYKk635h1HtmrnAU0MbQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:47:38.064 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] DEBUG o.s.a.r.l.BlockingQueueConsumer - Closing Rabbit Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229]
+2025-12-10 17:47:38.064 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] DEBUG o.s.a.r.c.CachingConnectionFactory - Closing cached Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+2025-12-10 17:47:38.080 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Cancelling Consumer@52c27d53: tags=[[amq.ctag-T667yxlC9LZWb1ebsEtWMQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,3), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:47:38.081 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - Closing Rabbit Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,3), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229]
+2025-12-10 17:47:38.081 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] DEBUG o.s.a.r.c.CachingConnectionFactory - Closing cached Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,3)
+2025-12-10 17:47:38.435 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2025-12-10 17:47:38.435 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Cancelling Consumer@5ca7619f: tags=[[amq.ctag-BAAfXzyeG-di0eJKylDUFw]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,2), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:47:38.435 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG o.s.a.r.l.BlockingQueueConsumer - Closing Rabbit Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,2), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229]
+2025-12-10 17:47:38.435 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG o.s.a.r.c.CachingConnectionFactory - Closing cached Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,2)
+2025-12-10 17:47:38.505 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-4] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2025-12-10 17:47:38.505 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-3] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Cancelling Consumer@5c1687d1: tags=[[amq.ctag-O0WF738y00hHhrHHWNEulw]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,6), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:47:38.505 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - Closing Rabbit Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,6), conn: Proxy@3450bd13 Shared Rabbit Connection: SimpleConnection@39c1e7b7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57229]
+2025-12-10 17:47:38.505 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-3] DEBUG o.s.a.r.c.CachingConnectionFactory - Closing cached Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,6)
+2025-12-10 17:47:38.506 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10 17:47:38.507 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-12-10 17:47:38.508 [SpringApplicationShutdownHook] DEBUG o.s.a.r.c.CachingConnectionFactory - Closing cached Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,7)
+2025-12-10 17:47:38.511 [SpringApplicationShutdownHook] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Shutdown ignored - container is not active already
+2025-12-10 17:47:38.512 [SpringApplicationShutdownHook] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Shutdown ignored - container is not active already
+2025-12-10 17:47:38.513 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2025-12-10 17:47:41.518 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2025-12-10 17:47:41.521 [SpringApplicationShutdownHook] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/MAIL-SERVICE/192.168.1.139:mail-service:8082": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/MAIL-SERVICE/192.168.1.139:mail-service:8082": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:100)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:667)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:624)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1363)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:583)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1356)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1219)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:216)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:490)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:150)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:174)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:141)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 38 more
+
+2025-12-10 17:47:41.521 [SpringApplicationShutdownHook] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/MAIL-SERVICE/192.168.1.139:mail-service:8082": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+2025-12-10 17:47:41.521 [SpringApplicationShutdownHook] ERROR c.netflix.discovery.DiscoveryClient - DiscoveryClient_MAIL-SERVICE/192.168.1.139:mail-service:8082 - de-registration failedCannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:667)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:624)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1363)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:583)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1356)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1219)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-12-10 17:47:41.522 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2025-12-10 17:48:24.230 [main] INFO  c.t.mail.MailServiceApplication - Starting MailServiceApplication using Java 21.0.9 with PID 83053 (/Users/syanak/42/BilişimVadisiHackathon/mail-service/target/classes started by syanak in /Users/syanak/42/BilişimVadisiHackathon/mail-service)
+2025-12-10 17:48:24.230 [main] DEBUG c.t.mail.MailServiceApplication - Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-12-10 17:48:24.231 [main] INFO  c.t.mail.MailServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-10 17:48:24.533 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=d1851908-eaaf-36de-9256-499a4395d8c8
+2025-12-10 17:48:24.613 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2025-12-10 17:48:24.617 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-10 17:48:24.617 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-12-10 17:48:24.633 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-10 17:48:24.633 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 391 ms
+2025-12-10 17:48:24.949 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2025-12-10 17:48:24.960 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-10 17:48:24.963 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-12-10 17:48:24.973 [main] DEBUG o.s.a.r.l.a.MessagingMessageListenerAdapter - Inferred argument type for public void com.thebuilders.mail.listener.EmailEventListener.handleUserRegisteredEvent(com.thebuilders.common.event.UserRegisteredEvent) is class com.thebuilders.common.event.UserRegisteredEvent
+2025-12-10 17:48:24.979 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Changing consumers from 1 to 3
+2025-12-10 17:48:24.979 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - No global properties bean
+2025-12-10 17:48:24.979 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - No global properties bean
+2025-12-10 17:48:24.979 [main] DEBUG o.s.a.r.l.a.MessagingMessageListenerAdapter - Inferred argument type for public void com.thebuilders.mail.listener.EmailEventListener.handlePasswordResetEvent(com.thebuilders.common.event.PasswordResetEvent) is class com.thebuilders.common.event.PasswordResetEvent
+2025-12-10 17:48:24.979 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Changing consumers from 1 to 3
+2025-12-10 17:48:24.979 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - No global properties bean
+2025-12-10 17:48:24.979 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - No global properties bean
+2025-12-10 17:48:24.988 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2025-12-10 17:48:24.994 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2025-12-10 17:48:24.995 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-10 17:48:24.997 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2025-12-10 17:48:24.997 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2025-12-10 17:48:24.998 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2025-12-10 17:48:24.998 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2025-12-10 17:48:24.998 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2025-12-10 17:48:24.998 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2025-12-10 17:48:24.998 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2025-12-10 17:48:25.083 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2025-12-10 17:48:25.083 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2025-12-10 17:48:25.084 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-12-10 17:48:25.084 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1765378105084 with initial instances count: 0
+2025-12-10 17:48:25.085 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application MAIL-SERVICE with eureka with status UP
+2025-12-10 17:48:25.085 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1765378105085, current=UP, previous=STARTING]
+2025-12-10 17:48:25.086 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_MAIL-SERVICE/192.168.1.139:mail-service:8082: registering service...
+2025-12-10 17:48:25.089 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/'
+2025-12-10 17:48:25.089 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8082
+2025-12-10 17:48:25.092 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Starting Rabbit listener container.
+2025-12-10 17:48:25.093 [main] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2025-12-10 17:48:25.098 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_MAIL-SERVICE/192.168.1.139:mail-service:8082 - registration status: 204
+2025-12-10 17:48:25.115 [main] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#699e0bf0:0/SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612]
+2025-12-10 17:48:25.116 [main] DEBUG o.s.amqp.rabbit.core.RabbitAdmin - Initializing declarations
+2025-12-10 17:48:25.121 [main] DEBUG o.s.a.r.c.CachingConnectionFactory - Creating cached Rabbit Channel from AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+2025-12-10 17:48:25.124 [main] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitAdmin$$Lambda/0x00000088017b7870 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612]
+2025-12-10 17:48:25.124 [main] DEBUG o.s.amqp.rabbit.core.RabbitAdmin - declaring Queue 'email-queue'
+2025-12-10 17:48:25.126 [main] DEBUG o.s.amqp.rabbit.core.RabbitAdmin - Declarations finished
+2025-12-10 17:48:25.128 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitAdmin$$Lambda/0x00000088017c0238 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612]
+2025-12-10 17:48:25.129 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitAdmin$$Lambda/0x00000088017c0238 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612]
+2025-12-10 17:48:25.130 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG o.s.a.r.l.BlockingQueueConsumer - Starting consumer Consumer@14fe085b: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:48:25.130 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] DEBUG o.s.a.r.l.BlockingQueueConsumer - Starting consumer Consumer@1ea19c97: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:48:25.130 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitAdmin$$Lambda/0x00000088017c0238 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612]
+2025-12-10 17:48:25.131 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - Starting consumer Consumer@525b9df4: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:48:25.132 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG o.s.a.r.c.CachingConnectionFactory - Creating cached Rabbit Channel from AMQChannel(amqp://guest@127.0.0.1:5672/,2)
+2025-12-10 17:48:25.132 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] DEBUG o.s.a.r.c.CachingConnectionFactory - Creating cached Rabbit Channel from AMQChannel(amqp://guest@127.0.0.1:5672/,3)
+2025-12-10 17:48:25.142 [pool-1-thread-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - ConsumeOK: Consumer@525b9df4: tags=[[amq.ctag-IKiDVcCS_w36pxFm_t3jLg]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:48:25.142 [pool-1-thread-4] DEBUG o.s.a.r.l.BlockingQueueConsumer - ConsumeOK: Consumer@14fe085b: tags=[[]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,2), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:48:25.142 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - Started on queue 'email-queue' with tag amq.ctag-IKiDVcCS_w36pxFm_t3jLg: Consumer@525b9df4: tags=[[amq.ctag-IKiDVcCS_w36pxFm_t3jLg]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:48:25.142 [pool-1-thread-5] DEBUG o.s.a.r.l.BlockingQueueConsumer - ConsumeOK: Consumer@1ea19c97: tags=[[amq.ctag-YFz0N1BYPTLL5iRcUcFgYA]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,3), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:48:25.142 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] DEBUG o.s.a.r.l.BlockingQueueConsumer - Started on queue 'email-queue' with tag amq.ctag-YFz0N1BYPTLL5iRcUcFgYA: Consumer@1ea19c97: tags=[[]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,3), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:48:25.142 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG o.s.a.r.l.BlockingQueueConsumer - Started on queue 'email-queue' with tag amq.ctag-iXX13DpbSghcAS9PM3baJw: Consumer@14fe085b: tags=[[amq.ctag-iXX13DpbSghcAS9PM3baJw]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,2), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:48:25.142 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Starting Rabbit listener container.
+2025-12-10 17:48:25.144 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG o.s.a.r.c.CachingConnectionFactory - Creating cached Rabbit Channel from AMQChannel(amqp://guest@127.0.0.1:5672/,4)
+2025-12-10 17:48:25.144 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitAdmin$$Lambda/0x00000088017c0238 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612]
+2025-12-10 17:48:25.147 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG o.s.a.r.l.BlockingQueueConsumer - Starting consumer Consumer@5e72c82a: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:48:25.148 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] DEBUG o.s.a.r.c.CachingConnectionFactory - Creating cached Rabbit Channel from AMQChannel(amqp://guest@127.0.0.1:5672/,5)
+2025-12-10 17:48:25.148 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitAdmin$$Lambda/0x00000088017c0238 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,5), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612]
+2025-12-10 17:48:25.149 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] DEBUG o.s.a.r.l.BlockingQueueConsumer - Starting consumer Consumer@64fba3e6: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:48:25.149 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG o.s.a.r.l.BlockingQueueConsumer - Started on queue 'email-queue' with tag amq.ctag-mVLtR87-wK-xRAp-oV65tw: Consumer@5e72c82a: tags=[[]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:48:25.149 [pool-1-thread-6] DEBUG o.s.a.r.l.BlockingQueueConsumer - ConsumeOK: Consumer@5e72c82a: tags=[[amq.ctag-mVLtR87-wK-xRAp-oV65tw]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:48:25.150 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-3] DEBUG o.s.a.r.c.CachingConnectionFactory - Creating cached Rabbit Channel from AMQChannel(amqp://guest@127.0.0.1:5672/,6)
+2025-12-10 17:48:25.150 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-3] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitAdmin$$Lambda/0x00000088017c0238 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,6), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612]
+2025-12-10 17:48:25.150 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - Starting consumer Consumer@aaa7000: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:48:25.150 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] DEBUG o.s.a.r.l.BlockingQueueConsumer - Started on queue 'email-queue' with tag amq.ctag-2DxxkxxogIRApNE-A0XqUw: Consumer@64fba3e6: tags=[[]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,5), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:48:25.150 [pool-1-thread-7] DEBUG o.s.a.r.l.BlockingQueueConsumer - ConsumeOK: Consumer@64fba3e6: tags=[[amq.ctag-2DxxkxxogIRApNE-A0XqUw]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,5), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:48:25.152 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - Started on queue 'email-queue' with tag amq.ctag-5uI433mi_rT_WBfyFH-cyQ: Consumer@aaa7000: tags=[[]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,6), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:48:25.152 [pool-1-thread-8] DEBUG o.s.a.r.l.BlockingQueueConsumer - ConsumeOK: Consumer@aaa7000: tags=[[amq.ctag-5uI433mi_rT_WBfyFH-cyQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,6), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:48:25.158 [main] INFO  c.t.mail.MailServiceApplication - Started MailServiceApplication in 1.098 seconds (process running for 1.266)
+2025-12-10 17:48:27.782 [http-nio-8082-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-10 17:48:27.783 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-10 17:48:27.783 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-12-10 17:48:27.797 [http-nio-8082-exec-1] DEBUG o.s.a.r.c.CachingConnectionFactory - Creating cached Rabbit Channel from AMQChannel(amqp://guest@127.0.0.1:5672/,7)
+2025-12-10 17:48:27.797 [http-nio-8082-exec-1] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitHealthIndicator$$Lambda/0x00000088017fd8b8 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,7), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612]
+2025-12-10 17:48:32.980 [http-nio-8082-exec-2] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitHealthIndicator$$Lambda/0x00000088017fd8b8 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,7), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612]
+2025-12-10 17:48:55.090 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2025-12-10 17:48:55.091 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2025-12-10 17:48:55.091 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2025-12-10 17:48:55.091 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2025-12-10 17:48:55.091 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2025-12-10 17:48:55.091 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: false
+2025-12-10 17:48:55.091 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2025-12-10 17:48:55.116 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2025-12-10 17:53:25.012 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-10 17:58:25.001 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-10 17:58:37.603 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application MAIL-SERVICE with eureka with status DOWN
+2025-12-10 17:58:37.603 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1765378717603, current=DOWN, previous=UP]
+2025-12-10 17:58:37.603 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_MAIL-SERVICE/192.168.1.139:mail-service:8082: registering service...
+2025-12-10 17:58:37.608 [SpringApplicationShutdownHook] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Shutting down Rabbit listener container
+2025-12-10 17:58:37.612 [pool-1-thread-9] DEBUG o.s.a.r.l.BlockingQueueConsumer - Received cancelOk for tag amq.ctag-iXX13DpbSghcAS9PM3baJw (email-queue); Consumer@14fe085b: tags=[[amq.ctag-iXX13DpbSghcAS9PM3baJw]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,2), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:58:37.613 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on POST request for "http://localhost:8761/eureka/apps/MAIL-SERVICE": localhost:8761 failed to respond stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/MAIL-SERVICE": localhost:8761 failed to respond
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.core5.http.NoHttpResponseException: localhost:8761 failed to respond
+	at org.apache.hc.core5.http.impl.io.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:333)
+	at org.apache.hc.core5.http.impl.io.HttpRequestExecutor.execute(HttpRequestExecutor.java:193)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.lambda$execute$0(InternalExecRuntime.java:236)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$InternalConnectionEndpoint.execute(PoolingHttpClientConnectionManager.java:791)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.execute(InternalExecRuntime.java:233)
+	at org.apache.hc.client5.http.impl.classic.MainClientExec.execute(MainClientExec.java:121)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:199)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:150)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:174)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:141)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 21 more
+
+2025-12-10 17:58:37.613 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/MAIL-SERVICE": localhost:8761 failed to respond
+2025-12-10 17:58:37.613 [pool-1-thread-10] DEBUG o.s.a.r.l.BlockingQueueConsumer - Received cancelOk for tag amq.ctag-YFz0N1BYPTLL5iRcUcFgYA (email-queue); Consumer@1ea19c97: tags=[[amq.ctag-YFz0N1BYPTLL5iRcUcFgYA]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,3), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:58:37.614 [pool-1-thread-11] DEBUG o.s.a.r.l.BlockingQueueConsumer - Received cancelOk for tag amq.ctag-IKiDVcCS_w36pxFm_t3jLg (email-queue); Consumer@525b9df4: tags=[[amq.ctag-IKiDVcCS_w36pxFm_t3jLg]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:58:37.614 [SpringApplicationShutdownHook] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Shutting down Rabbit listener container
+2025-12-10 17:58:37.614 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Waiting for workers to finish.
+2025-12-10 17:58:37.615 [pool-1-thread-12] DEBUG o.s.a.r.l.BlockingQueueConsumer - Received cancelOk for tag amq.ctag-mVLtR87-wK-xRAp-oV65tw (email-queue); Consumer@5e72c82a: tags=[[amq.ctag-mVLtR87-wK-xRAp-oV65tw]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:58:37.616 [pool-1-thread-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - Received cancelOk for tag amq.ctag-2DxxkxxogIRApNE-A0XqUw (email-queue); Consumer@64fba3e6: tags=[[amq.ctag-2DxxkxxogIRApNE-A0XqUw]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,5), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:58:37.616 [pool-1-thread-4] DEBUG o.s.a.r.l.BlockingQueueConsumer - Received cancelOk for tag amq.ctag-5uI433mi_rT_WBfyFH-cyQ (email-queue); Consumer@aaa7000: tags=[[amq.ctag-5uI433mi_rT_WBfyFH-cyQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,6), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:58:37.617 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-4] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Waiting for workers to finish.
+2025-12-10 17:58:37.620 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/MAIL-SERVICE": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/MAIL-SERVICE": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:216)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:490)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:150)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:174)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:141)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 22 more
+
+2025-12-10 17:58:37.620 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/MAIL-SERVICE": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+2025-12-10 17:58:37.620 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.netflix.discovery.DiscoveryClient - DiscoveryClient_MAIL-SERVICE/192.168.1.139:mail-service:8082 - registration failed Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-12-10 17:58:37.622 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.n.discovery.InstanceInfoReplicator - There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-12-10 17:58:38.282 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Cancelling Consumer@525b9df4: tags=[[amq.ctag-IKiDVcCS_w36pxFm_t3jLg]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:58:38.283 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - Closing Rabbit Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612]
+2025-12-10 17:58:38.283 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] DEBUG o.s.a.r.c.CachingConnectionFactory - Closing cached Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+2025-12-10 17:58:38.285 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Cancelling Consumer@64fba3e6: tags=[[amq.ctag-2DxxkxxogIRApNE-A0XqUw]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,5), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:58:38.285 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] DEBUG o.s.a.r.l.BlockingQueueConsumer - Closing Rabbit Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,5), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612]
+2025-12-10 17:58:38.285 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] DEBUG o.s.a.r.c.CachingConnectionFactory - Closing cached Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,5)
+2025-12-10 17:58:38.306 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Cancelling Consumer@14fe085b: tags=[[amq.ctag-iXX13DpbSghcAS9PM3baJw]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,2), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:58:38.307 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG o.s.a.r.l.BlockingQueueConsumer - Closing Rabbit Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,2), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612]
+2025-12-10 17:58:38.307 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG o.s.a.r.c.CachingConnectionFactory - Closing cached Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,2)
+2025-12-10 17:58:38.361 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-3] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Cancelling Consumer@aaa7000: tags=[[amq.ctag-5uI433mi_rT_WBfyFH-cyQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,6), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:58:38.362 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - Closing Rabbit Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,6), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612]
+2025-12-10 17:58:38.362 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-3] DEBUG o.s.a.r.c.CachingConnectionFactory - Closing cached Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,6)
+2025-12-10 17:58:38.371 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-4] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2025-12-10 17:58:38.371 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Cancelling Consumer@5e72c82a: tags=[[amq.ctag-mVLtR87-wK-xRAp-oV65tw]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:58:38.371 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG o.s.a.r.l.BlockingQueueConsumer - Closing Rabbit Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612]
+2025-12-10 17:58:38.371 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG o.s.a.r.c.CachingConnectionFactory - Closing cached Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4)
+2025-12-10 17:58:38.399 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2025-12-10 17:58:38.399 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Cancelling Consumer@1ea19c97: tags=[[amq.ctag-YFz0N1BYPTLL5iRcUcFgYA]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,3), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:58:38.399 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] DEBUG o.s.a.r.l.BlockingQueueConsumer - Closing Rabbit Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,3), conn: Proxy@4d90d91f Shared Rabbit Connection: SimpleConnection@21dd9203 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57612]
+2025-12-10 17:58:38.399 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] DEBUG o.s.a.r.c.CachingConnectionFactory - Closing cached Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,3)
+2025-12-10 17:58:38.401 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10 17:58:38.406 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-12-10 17:58:38.409 [SpringApplicationShutdownHook] DEBUG o.s.a.r.c.CachingConnectionFactory - Closing cached Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,7)
+2025-12-10 17:58:38.420 [SpringApplicationShutdownHook] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Shutdown ignored - container is not active already
+2025-12-10 17:58:38.420 [SpringApplicationShutdownHook] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Shutdown ignored - container is not active already
+2025-12-10 17:58:38.422 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2025-12-10 17:58:41.428 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2025-12-10 17:58:41.430 [SpringApplicationShutdownHook] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/MAIL-SERVICE/192.168.1.139:mail-service:8082": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/MAIL-SERVICE/192.168.1.139:mail-service:8082": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:100)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:667)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:624)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1363)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:583)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1356)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1219)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:216)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:490)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:150)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:174)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:141)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 38 more
+
+2025-12-10 17:58:41.430 [SpringApplicationShutdownHook] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/MAIL-SERVICE/192.168.1.139:mail-service:8082": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+2025-12-10 17:58:41.430 [SpringApplicationShutdownHook] ERROR c.netflix.discovery.DiscoveryClient - DiscoveryClient_MAIL-SERVICE/192.168.1.139:mail-service:8082 - de-registration failedCannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:667)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:624)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1363)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:583)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1356)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1219)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-12-10 17:58:41.431 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2025-12-10 17:59:10.439 [main] INFO  c.t.mail.MailServiceApplication - Starting MailServiceApplication using Java 21.0.9 with PID 88495 (/Users/syanak/42/BilişimVadisiHackathon/mail-service/target/classes started by syanak in /Users/syanak/42/BilişimVadisiHackathon/mail-service)
+2025-12-10 17:59:10.439 [main] DEBUG c.t.mail.MailServiceApplication - Running with Spring Boot v3.4.0, Spring v6.2.0
+2025-12-10 17:59:10.439 [main] INFO  c.t.mail.MailServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-10 17:59:10.772 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=d1851908-eaaf-36de-9256-499a4395d8c8
+2025-12-10 17:59:10.855 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2025-12-10 17:59:10.864 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-10 17:59:10.864 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-12-10 17:59:10.881 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-10 17:59:10.881 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 430 ms
+2025-12-10 17:59:11.208 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2025-12-10 17:59:11.220 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-10 17:59:11.222 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-12-10 17:59:11.233 [main] DEBUG o.s.a.r.l.a.MessagingMessageListenerAdapter - Inferred argument type for public void com.thebuilders.mail.listener.EmailEventListener.handleUserRegisteredEvent(com.thebuilders.common.event.UserRegisteredEvent) is class com.thebuilders.common.event.UserRegisteredEvent
+2025-12-10 17:59:11.236 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Changing consumers from 1 to 3
+2025-12-10 17:59:11.236 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - No global properties bean
+2025-12-10 17:59:11.236 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - No global properties bean
+2025-12-10 17:59:11.237 [main] DEBUG o.s.a.r.l.a.MessagingMessageListenerAdapter - Inferred argument type for public void com.thebuilders.mail.listener.EmailEventListener.handlePasswordResetEvent(com.thebuilders.common.event.PasswordResetEvent) is class com.thebuilders.common.event.PasswordResetEvent
+2025-12-10 17:59:11.237 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Changing consumers from 1 to 3
+2025-12-10 17:59:11.237 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - No global properties bean
+2025-12-10 17:59:11.237 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - No global properties bean
+2025-12-10 17:59:11.245 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2025-12-10 17:59:11.253 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2025-12-10 17:59:11.254 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-10 17:59:11.256 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2025-12-10 17:59:11.257 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2025-12-10 17:59:11.257 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2025-12-10 17:59:11.257 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2025-12-10 17:59:11.257 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2025-12-10 17:59:11.257 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2025-12-10 17:59:11.257 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2025-12-10 17:59:11.350 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2025-12-10 17:59:11.350 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2025-12-10 17:59:11.351 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-12-10 17:59:11.351 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1765378751351 with initial instances count: 1
+2025-12-10 17:59:11.352 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application MAIL-SERVICE with eureka with status UP
+2025-12-10 17:59:11.352 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1765378751352, current=UP, previous=STARTING]
+2025-12-10 17:59:11.353 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_MAIL-SERVICE/192.168.1.139:mail-service:8082: registering service...
+2025-12-10 17:59:11.357 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/'
+2025-12-10 17:59:11.357 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8082
+2025-12-10 17:59:11.359 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Starting Rabbit listener container.
+2025-12-10 17:59:11.360 [main] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2025-12-10 17:59:11.368 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_MAIL-SERVICE/192.168.1.139:mail-service:8082 - registration status: 204
+2025-12-10 17:59:11.381 [main] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#25470477:0/SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033]
+2025-12-10 17:59:11.383 [main] DEBUG o.s.amqp.rabbit.core.RabbitAdmin - Initializing declarations
+2025-12-10 17:59:11.388 [main] DEBUG o.s.a.r.c.CachingConnectionFactory - Creating cached Rabbit Channel from AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+2025-12-10 17:59:11.391 [main] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitAdmin$$Lambda/0x00000090017af5f0 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@1bb51492 Shared Rabbit Connection: SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033]
+2025-12-10 17:59:11.391 [main] DEBUG o.s.amqp.rabbit.core.RabbitAdmin - declaring Queue 'email-queue'
+2025-12-10 17:59:11.393 [main] DEBUG o.s.amqp.rabbit.core.RabbitAdmin - Declarations finished
+2025-12-10 17:59:11.395 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitAdmin$$Lambda/0x00000090017b7d78 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@1bb51492 Shared Rabbit Connection: SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033]
+2025-12-10 17:59:11.397 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitAdmin$$Lambda/0x00000090017b7d78 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@1bb51492 Shared Rabbit Connection: SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033]
+2025-12-10 17:59:11.397 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG o.s.a.r.l.BlockingQueueConsumer - Starting consumer Consumer@5ca7619f: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:59:11.397 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] DEBUG o.s.a.r.l.BlockingQueueConsumer - Starting consumer Consumer@5b71af0d: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:59:11.398 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitAdmin$$Lambda/0x00000090017b7d78 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@1bb51492 Shared Rabbit Connection: SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033]
+2025-12-10 17:59:11.398 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - Starting consumer Consumer@fb42c1c: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:59:11.399 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG o.s.a.r.c.CachingConnectionFactory - Creating cached Rabbit Channel from AMQChannel(amqp://guest@127.0.0.1:5672/,2)
+2025-12-10 17:59:11.400 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] DEBUG o.s.a.r.c.CachingConnectionFactory - Creating cached Rabbit Channel from AMQChannel(amqp://guest@127.0.0.1:5672/,3)
+2025-12-10 17:59:11.403 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - Started on queue 'email-queue' with tag amq.ctag-U8USU3Nu5KpiRxn4yg6GhA: Consumer@fb42c1c: tags=[[amq.ctag-U8USU3Nu5KpiRxn4yg6GhA]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@1bb51492 Shared Rabbit Connection: SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:59:11.403 [pool-1-thread-4] DEBUG o.s.a.r.l.BlockingQueueConsumer - ConsumeOK: Consumer@5b71af0d: tags=[[]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,3), conn: Proxy@1bb51492 Shared Rabbit Connection: SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:59:11.403 [pool-1-thread-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - ConsumeOK: Consumer@fb42c1c: tags=[[amq.ctag-U8USU3Nu5KpiRxn4yg6GhA]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@1bb51492 Shared Rabbit Connection: SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:59:11.403 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] DEBUG o.s.a.r.l.BlockingQueueConsumer - Started on queue 'email-queue' with tag amq.ctag-R-q1-6mWHwjeNWrU7LbOdA: Consumer@5b71af0d: tags=[[amq.ctag-R-q1-6mWHwjeNWrU7LbOdA]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,3), conn: Proxy@1bb51492 Shared Rabbit Connection: SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:59:11.403 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG o.s.a.r.l.BlockingQueueConsumer - Started on queue 'email-queue' with tag amq.ctag-L7WZMztVw3YgsBuvrCikyg: Consumer@5ca7619f: tags=[[]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,2), conn: Proxy@1bb51492 Shared Rabbit Connection: SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:59:11.403 [pool-1-thread-5] DEBUG o.s.a.r.l.BlockingQueueConsumer - ConsumeOK: Consumer@5ca7619f: tags=[[amq.ctag-L7WZMztVw3YgsBuvrCikyg]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,2), conn: Proxy@1bb51492 Shared Rabbit Connection: SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:59:11.403 [main] DEBUG o.s.a.r.l.SimpleMessageListenerContainer - Starting Rabbit listener container.
+2025-12-10 17:59:11.404 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG o.s.a.r.c.CachingConnectionFactory - Creating cached Rabbit Channel from AMQChannel(amqp://guest@127.0.0.1:5672/,4)
+2025-12-10 17:59:11.404 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitAdmin$$Lambda/0x00000090017b7d78 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4), conn: Proxy@1bb51492 Shared Rabbit Connection: SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033]
+2025-12-10 17:59:11.405 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG o.s.a.r.l.BlockingQueueConsumer - Starting consumer Consumer@57e6d56a: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:59:11.406 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] DEBUG o.s.a.r.c.CachingConnectionFactory - Creating cached Rabbit Channel from AMQChannel(amqp://guest@127.0.0.1:5672/,5)
+2025-12-10 17:59:11.406 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitAdmin$$Lambda/0x00000090017b7d78 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,5), conn: Proxy@1bb51492 Shared Rabbit Connection: SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033]
+2025-12-10 17:59:11.407 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] DEBUG o.s.a.r.l.BlockingQueueConsumer - Starting consumer Consumer@5c1687d1: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:59:11.407 [pool-1-thread-6] DEBUG o.s.a.r.l.BlockingQueueConsumer - ConsumeOK: Consumer@57e6d56a: tags=[[]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4), conn: Proxy@1bb51492 Shared Rabbit Connection: SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:59:11.407 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG o.s.a.r.l.BlockingQueueConsumer - Started on queue 'email-queue' with tag amq.ctag-28vomixeVxPDbMlJs1UH6w: Consumer@57e6d56a: tags=[[amq.ctag-28vomixeVxPDbMlJs1UH6w]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4), conn: Proxy@1bb51492 Shared Rabbit Connection: SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:59:11.407 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-3] DEBUG o.s.a.r.c.CachingConnectionFactory - Creating cached Rabbit Channel from AMQChannel(amqp://guest@127.0.0.1:5672/,6)
+2025-12-10 17:59:11.407 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-3] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitAdmin$$Lambda/0x00000090017b7d78 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,6), conn: Proxy@1bb51492 Shared Rabbit Connection: SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033]
+2025-12-10 17:59:11.408 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - Starting consumer Consumer@1504b493: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:59:11.408 [pool-1-thread-7] DEBUG o.s.a.r.l.BlockingQueueConsumer - ConsumeOK: Consumer@5c1687d1: tags=[[]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,5), conn: Proxy@1bb51492 Shared Rabbit Connection: SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:59:11.408 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] DEBUG o.s.a.r.l.BlockingQueueConsumer - Started on queue 'email-queue' with tag amq.ctag-gcDFNt9WMHske2wW-_SQFQ: Consumer@5c1687d1: tags=[[amq.ctag-gcDFNt9WMHske2wW-_SQFQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,5), conn: Proxy@1bb51492 Shared Rabbit Connection: SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:59:11.409 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-3] DEBUG o.s.a.r.l.BlockingQueueConsumer - Started on queue 'email-queue' with tag amq.ctag-hxemLdWf_7nVIsb7MuO3ww: Consumer@1504b493: tags=[[]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,6), conn: Proxy@1bb51492 Shared Rabbit Connection: SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:59:11.409 [pool-1-thread-8] DEBUG o.s.a.r.l.BlockingQueueConsumer - ConsumeOK: Consumer@1504b493: tags=[[amq.ctag-hxemLdWf_7nVIsb7MuO3ww]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,6), conn: Proxy@1bb51492 Shared Rabbit Connection: SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033], acknowledgeMode=AUTO local queue size=0
+2025-12-10 17:59:11.415 [main] INFO  c.t.mail.MailServiceApplication - Started MailServiceApplication in 1.144 seconds (process running for 1.306)
+2025-12-10 17:59:14.109 [http-nio-8082-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-10 17:59:14.109 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-10 17:59:14.110 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-10 17:59:14.125 [http-nio-8082-exec-1] DEBUG o.s.a.r.c.CachingConnectionFactory - Creating cached Rabbit Channel from AMQChannel(amqp://guest@127.0.0.1:5672/,7)
+2025-12-10 17:59:14.125 [http-nio-8082-exec-1] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitHealthIndicator$$Lambda/0x0000009001818fd0 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,7), conn: Proxy@1bb51492 Shared Rabbit Connection: SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033]
+2025-12-10 17:59:17.271 [http-nio-8082-exec-2] DEBUG o.s.amqp.rabbit.core.RabbitTemplate - Executing callback RabbitHealthIndicator$$Lambda/0x0000009001818fd0 on RabbitMQ Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,7), conn: Proxy@1bb51492 Shared Rabbit Connection: SimpleConnection@1c14d24d [delegate=amqp://guest@127.0.0.1:5672/, localPort=58033]
+2025-12-10 18:04:11.266 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-10 18:09:11.275 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-10 18:14:11.262 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-10 18:19:11.275 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-10 18:24:11.283 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-10 18:29:11.079 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-10 18:34:11.077 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-10 18:39:11.073 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-10 18:44:11.067 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-10 18:49:11.060 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-10 18:54:11.062 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-10 18:59:11.031 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-10 19:04:11.029 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-10 19:09:11.028 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
