@@ -8,11 +8,11 @@
         test install help
 
 # Renkler
-GREEN := \033[0;32m
-RED := \033[0;31m
-YELLOW := \033[0;33m
-BLUE := \033[0;34m
-NC := \033[0m # No Color
+GREEN := $(shell printf "\033[0;32m")
+RED := $(shell printf "\033[0;31m")
+YELLOW := $(shell printf "\033[0;33m")
+BLUE := $(shell printf "\033[0;34m")
+NC := $(shell printf "\033[0m")
 
 # Java 21 Configuration
 SHELL := /bin/bash
@@ -119,14 +119,15 @@ test: ## Testleri çalıştır
 
 start-infra: ## Docker altyapısını başlat
 	@echo "$(BLUE)► Docker altyapısı başlatılıyor...$(NC)"
-	@docker-compose -f docker-compose.dev.yml up -d auth-db rabbitmq mailhog redis
-	@echo "$(GREEN)✓ PostgreSQL, RabbitMQ, MailHog, Redis başlatıldı$(NC)"
-	@sleep 3
+	@docker-compose up -d auth-db rabbitmq mailhog redis loki promtail grafana
+	@echo "$(GREEN)✓ PostgreSQL, RabbitMQ, MailHog, Redis, Loki, Promtail, Grafana başlatıldı$(NC)"
+	@sleep 5
 	@make infra-status
+	@make monitoring-status
 
 stop-infra: ## Docker altyapısını durdur
 	@echo "$(BLUE)► Docker altyapısı durduruluyor...$(NC)"
-	@docker-compose -f docker-compose.dev.yml down
+	@docker-compose down
 	@echo "$(GREEN)✓ Altyapı durduruldu$(NC)"
 
 # ============================================
@@ -136,7 +137,7 @@ stop-infra: ## Docker altyapısını durdur
 start-monitoring: ## Grafana + Loki monitoring başlat
 	@echo "$(BLUE)► Monitoring stack başlatılıyor...$(NC)"
 	@mkdir -p logs
-	@docker-compose -f docker-compose.dev.yml up -d loki promtail grafana
+	@docker-compose up -d loki promtail grafana
 	@echo "$(GREEN)✓ Loki, Promtail, Grafana başlatıldı$(NC)"
 	@echo ""
 	@echo "$(YELLOW)Grafana: http://localhost:3001$(NC)"
@@ -344,6 +345,7 @@ status: ## Servis durumlarını göster
 	fi
 	@echo ""
 	@make infra-status
+	@make monitoring-status
 
 # ============================================
 # LOG KOMUTLARI

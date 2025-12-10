@@ -1,53 +1,43 @@
 version: '3.8'
 
+# Development only - just infrastructure services
+# Use this to run databases and message broker locally
+# while running Spring services from IDE
+
 services:
-  # ==================== Infrastructure ====================
-  
-  # PostgreSQL - Auth Service Database
   auth-db:
     image: postgres:16-alpine
     container_name: auth-db
     environment:
       POSTGRES_DB: ${DB_NAME:-auth_db}
-      POSTGRES_USER: ${DB_USERNAME:?DB_USERNAME is required}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD is required}
+      POSTGRES_USER: ${DB_USERNAME:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
     ports:
       - "5432:5432"
     volumes:
       - auth-db-data:/var/lib/postgresql/data
     networks:
       - career-portal-network
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DB_USERNAME:-postgres}"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
 
-  # RabbitMQ - Message Broker
   rabbitmq:
     image: rabbitmq:3-management-alpine
     container_name: rabbitmq
     environment:
-      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USERNAME:?RABBITMQ_USERNAME is required}
-      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD:?RABBITMQ_PASSWORD is required}
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USERNAME:-rabbitmq_user}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD:-rabbitmq_pass}
     ports:
-      - "5672:5672"   # AMQP
-      - "15672:15672" # Management UI
+      - "5672:5672"
+      - "15672:15672"
     volumes:
       - rabbitmq-data:/var/lib/rabbitmq
     networks:
       - career-portal-network
-    healthcheck:
-      test: ["CMD", "rabbitmq-diagnostics", "check_running"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
 
   # Redis - Rate Limiting & Token Blacklist
   redis:
     image: redis:7-alpine
     container_name: redis
-    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-}
+    command: redis-server --appendonly yes
     ports:
       - "6379:6379"
     volumes:
@@ -60,100 +50,73 @@ services:
       timeout: 5s
       retries: 5
 
-  # ==================== Services ====================
-
-  # Discovery Server (Eureka)
-  discovery-server:
-    build:
-      context: ./discovery-server
-      dockerfile: Dockerfile
-    container_name: discovery-server
+  # Optional: MailHog for testing emails locally
+  mailhog:
+    image: mailhog/mailhog
+    container_name: mailhog
     ports:
-      - "8761:8761"
+      - "1025:1025"  # SMTP
+      - "8025:8025"  # Web UI
+    networks:
+      - career-portal-network
+
+  # ============================================
+  # MONITORING STACK (Grafana + Loki + Promtail)
+  # ============================================
+
+  # Loki - Log aggregation system
+  loki:
+    image: grafana/loki:2.9.0
+    container_name: loki
+    user: "0"
+    ports:
+      - "3100:3100"
+    volumes:
+      - ./monitoring/loki-config.yml:/etc/loki/local-config.yaml
+      - loki-data:/loki
+    command: -config.file=/etc/loki/local-config.yaml
     networks:
       - career-portal-network
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost:8761/actuator/health"]
-      interval: 30s
-      timeout: 10s
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:3100/ready || exit 1"]
+      interval: 10s
+      timeout: 5s
       retries: 5
 
-  # API Gateway
-  api-gateway:
-    build:
-      context: ./api-gateway
-      dockerfile: Dockerfile
-    container_name: api-gateway
-    ports:
-      - "8080:8080"
-    environment:
-      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
-      - JWT_SECRET=${JWT_SECRET:?JWT_SECRET is required}
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
-      - REDIS_PASSWORD=${REDIS_PASSWORD:-}
-    depends_on:
-      discovery-server:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
+  # Promtail - Log collector agent
+  promtail:
+    image: grafana/promtail:2.9.0
+    container_name: promtail
+    volumes:
+      - ./monitoring/promtail-config.yml:/etc/promtail/config.yml
+      - ./logs:/var/log/app:ro
+    command: -config.file=/etc/promtail/config.yml
     networks:
       - career-portal-network
+    depends_on:
+      loki:
+        condition: service_healthy
 
-  # Auth Service
-  auth-service:
-    build:
-      context: ./auth-service
-      dockerfile: Dockerfile
-    container_name: auth-service
+  # Grafana - Visualization UI (Port 3001 - frontend için 3000 ayrıldı)
+  grafana:
+    image: grafana/grafana:10.2.0
+    container_name: grafana
     ports:
-      - "8081:8081"
+      - "3001:3000"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://auth-db:5432/${DB_NAME:-auth_db}
-      - DB_USERNAME=${DB_USERNAME:?DB_USERNAME is required}
-      - DB_PASSWORD=${DB_PASSWORD:?DB_PASSWORD is required}
-      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
-      - RABBITMQ_HOST=rabbitmq
-      - RABBITMQ_USERNAME=${RABBITMQ_USERNAME:?RABBITMQ_USERNAME is required}
-      - RABBITMQ_PASSWORD=${RABBITMQ_PASSWORD:?RABBITMQ_PASSWORD is required}
-      - JWT_SECRET=${JWT_SECRET:?JWT_SECRET is required}
-      - JWT_ACCESS_EXPIRATION=${JWT_ACCESS_EXPIRATION:-900000}
-      - JWT_REFRESH_EXPIRATION=${JWT_REFRESH_EXPIRATION:-604800000}
-    depends_on:
-      auth-db:
-        condition: service_healthy
-      rabbitmq:
-        condition: service_healthy
-      discovery-server:
-        condition: service_healthy
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_ADMIN_USER:-admin}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_ADMIN_PASSWORD:-admin123}
+      - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_SERVER_ROOT_URL=http://localhost:3001
+      - GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/etc/grafana/provisioning/dashboards/json/logs-dashboard.json
+    volumes:
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning
+      - grafana-data:/var/lib/grafana
     networks:
       - career-portal-network
-
-  # Mail Service
-  mail-service:
-    build:
-      context: ./mail-service
-      dockerfile: Dockerfile
-    container_name: mail-service
-    ports:
-      - "8082:8082"
-    environment:
-      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
-      - RABBITMQ_HOST=rabbitmq
-      - RABBITMQ_USERNAME=${RABBITMQ_USERNAME:?RABBITMQ_USERNAME is required}
-      - RABBITMQ_PASSWORD=${RABBITMQ_PASSWORD:?RABBITMQ_PASSWORD is required}
-      - MAIL_HOST=${MAIL_HOST:-smtp.gmail.com}
-      - MAIL_PORT=${MAIL_PORT:-587}
-      - MAIL_USERNAME=${MAIL_USERNAME:?MAIL_USERNAME is required}
-      - MAIL_PASSWORD=${MAIL_PASSWORD:?MAIL_PASSWORD is required}
-      - FRONTEND_URL=${FRONTEND_URL:-http://localhost:3000}
     depends_on:
-      rabbitmq:
+      loki:
         condition: service_healthy
-      discovery-server:
-        condition: service_healthy
-    networks:
-      - career-portal-network
 
 networks:
   career-portal-network:
@@ -163,3 +126,5 @@ volumes:
   auth-db-data:
   rabbitmq-data:
   redis-data:
+  loki-data:
+  grafana-data:
